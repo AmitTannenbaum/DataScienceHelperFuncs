@@ -49,9 +49,9 @@ def calc_corr(df, target):
     return res.sort_values(f"Correlation with `{str(target).capitalize()}`", ascending=False)
 
 def calc_corr_visualisation(df):
-  plt.figure(figsize=(15,8))
-  sns.heatmap(df.corr(), annot=True)\
-  .set(title = 'Correlation Chart');
+    plt.figure(figsize=(15,8))
+    sns.heatmap(df.corr(), annot=True)\
+    .set(title = 'Correlation Chart');
 
 def find_high_correlations(df, threshold):
     corr_mat = df.corr().unstack().sort_values(kind="quicksort").drop_duplicates()
